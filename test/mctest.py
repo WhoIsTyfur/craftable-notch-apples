@@ -240,7 +240,8 @@ class Process:
 
 
 def start_server(java: pathlib.Path, jar: pathlib.Path, workdir: pathlib.Path) -> Process:
-    args = [str(java), "-Xms512M", "-Xmx2G", "-Dlog4j2.formatMsgNoLookups=true", "-jar", str(jar), "nogui"]
+    # Headless, so no server can pop a desktop dialog when it finds no console.
+    args = [str(java), "-Xms512M", "-Xmx2G", "-Djava.awt.headless=true", "-Dlog4j2.formatMsgNoLookups=true", "-jar", str(jar), "nogui"]
     return Process(args, workdir)
 
 
