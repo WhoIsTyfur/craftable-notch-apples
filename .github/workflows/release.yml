@@ -1,0 +1,41 @@
+# Copyright (c) 2026 Tyler Fursman
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Build
+        run: python3 build.py
+
+      - name: Check the tag matches PACK_VERSION
+        run: test "${GITHUB_REF_NAME#v}" = "$(python3 -c 'import build; print(build.PACK_VERSION)')"
+
+      - name: Publish to Modrinth and CurseForge
+        env:
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          MODRINTH_PROJECT_ID: ${{ vars.MODRINTH_PROJECT_ID }}
+          CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+          CURSEFORGE_PROJECT_ID: ${{ vars.CURSEFORGE_PROJECT_ID }}
+        run: python3 publish.py
+
+      - name: GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          notes="$(python3 -c "import publish; print(publish.changelog_for('${GITHUB_REF_NAME#v}'))")"
+          gh release create "$GITHUB_REF_NAME" dist/*.zip --title "Craftable Notch Apples ${GITHUB_REF_NAME#v}" --notes "$notes"
