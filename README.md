@@ -1,22 +1,15 @@
 # Craftable Notch Apples
 
 A data pack that brings back the original enchanted golden apple recipe,
-which Minecraft removed in 1.9: **8 blocks of gold around an apple**.
-
-```
-[gold block] [gold block] [gold block]
-[gold block]    [apple]   [gold block]
-[gold block] [gold block] [gold block]
-```
+which Minecraft removed in 1.9:
 
 Works in singleplayer and on servers (vanilla, Paper, Spigot, Fabric, NeoForge,
-Forge -- anything that loads data packs). Players need nothing installed.
+Forge, anything that loads data packs). The data pack was made so you only need
+to install it on the server - no need for players to install anything.
 
 ## Versions
 
-Every Java release from **1.13 to 26.3**. Data packs did not exist before 1.13,
-and 1.8.9 and older still have this recipe built in.
-
+Every Java release from **1.13 to 26.3** is covered.
 Each download covers one pack format, so grab the one for your version:
 
 | Minecraft | File |
@@ -36,14 +29,6 @@ Each download covers one pack format, so grab the one for your version:
 | 1.21.2 - 1.21.8 | `...+mc1.21.2-1.21.8.zip` |
 | 1.21.9 - 26.2 | `...+mc1.21.9-26.2.zip` |
 | 26.3 | `...+mc26.3.zip` |
-
-## Installing
-
-- **New world:** Create New World -> Data Packs -> drag the zip in.
-- **Existing world or server:** put the zip in `<world>/datapacks/` and run
-  `/reload` (or restart). `/datapack list` should show it.
-
-The recipe unlocks in the recipe book once you pick up a block of gold.
 
 ## Building
 
