@@ -34,7 +34,7 @@ RUN = ROOT / "run"
 BOT = pathlib.Path(__file__).resolve().parent / "bot"
 CACHE = pathlib.Path(os.environ.get("MCTEST_CACHE", pathlib.Path.home() / ".cache" / "mctest"))
 
-USER_AGENT = "mctest/1.0 (+https://github.com/TinyGecko920/craftable-notch-apples)"
+USER_AGENT = "mctest/1.0 (+https://github.com/WhoIsTyfur/craftable-notch-apples)"
 VERSION_MANIFEST = "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json"
 ADOPTIUM = (
     "https://api.adoptium.net/v3/assets/latest/{feature}/hotspot"

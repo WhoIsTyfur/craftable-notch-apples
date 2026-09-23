@@ -25,7 +25,7 @@ import uuid
 
 ROOT = pathlib.Path(__file__).resolve().parent
 DIST = ROOT / "dist"
-USER_AGENT = "TinyGecko920/craftable-notch-apples publish.py"
+USER_AGENT = "WhoIsTyfur/craftable-notch-apples publish.py"
 MODRINTH_API = "https://api.modrinth.com/v2"
 CURSEFORGE_API = "https://minecraft.curseforge.com/api"
 
