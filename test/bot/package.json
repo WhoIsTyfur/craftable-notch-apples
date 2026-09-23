@@ -1,0 +1,9 @@
+{
+  "name": "craftable-notch-apples-test-bot",
+  "private": true,
+  "description": "Headless Minecraft client that crafts on a test server.",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "mineflayer": "4.39.0"
+  }
+}
