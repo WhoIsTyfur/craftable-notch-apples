@@ -285,6 +285,8 @@ def prepare_instance(name: str, port: int, datapacks: list[pathlib.Path]) -> pat
         "generate-structures": "false",
         "spawn-protection": "0",
         "spawn-monsters": "false",
+        # spawn-monsters alone still let a slime kill the bot on 26.1.2.
+        "difficulty": "0",
         "view-distance": "4",
         "simulation-distance": "4",
         "max-tick-time": "-1",
